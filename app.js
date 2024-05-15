@@ -6,7 +6,7 @@ const args = process.argv.slice(2);
 const filterArg = args.find(arg => arg.startsWith('--filter'));
 const countArg = args.find(arg => arg === '--count');
 
-let outputData = data;
+let outputData = [];
 
 if (filterArg) {
     filterPattern = filterArg.split('=')[1];
@@ -18,8 +18,6 @@ if (filterArg) {
 
 if (outputData.length > 0) {
     console.log(JSON.stringify(outputData));
-}
-
-else {
+} else {
     console.log('Usage: node app.js --filter=pattern');
 }
