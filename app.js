@@ -18,6 +18,8 @@ if (filterArg) {
 
 if (outputData.length > 0) {
     console.log(JSON.stringify(outputData));
+    process.exit(0);
 } else {
     console.log('Usage: node app.js --filter=pattern');
+    process.exit(1);
 }
